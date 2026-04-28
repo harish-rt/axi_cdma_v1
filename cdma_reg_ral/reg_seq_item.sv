@@ -10,6 +10,7 @@ class cdma_reg_seq_item extends uvm_sequence_item;
     rand bit [31:0] da_addr;
     rand bit [31:0] da_msb;
     rand bit [26:0] btt_bytes;
+
     rand btt_type_t btt_s;
 
     `uvm_object_utils_begin(cdma_reg_seq_item)
@@ -24,6 +25,7 @@ class cdma_reg_seq_item extends uvm_sequence_item;
       `uvm_field_int(da_addr,           UVM_ALL_ON)
       `uvm_field_int(da_msb,            UVM_ALL_ON)
       `uvm_field_int(btt_bytes,         UVM_ALL_ON)
+      `uvm_field_enum(btt_type_t,btt_s, UVM_ALL_ON)
     `uvm_object_utils_end
 
     function new(string name = "cdma_reg_seq_item");

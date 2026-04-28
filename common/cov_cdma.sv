@@ -20,6 +20,9 @@ class cdma_cov extends uvm_subscriber #(master_seq_item);
     endfunction
 
     covergroup axi_cdma;
+        option.per_instance = 1;
+        option.name = "cdma_coverage";
+
         RD_REG: coverpoint cov.araddr {
             bins CDMACR         = {'h00};
             bins CDMASR         = {'h04};
